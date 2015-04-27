@@ -1,0 +1,28 @@
+{
+  "name": "wallpulse",
+  "version": "1.0.0",
+  "dependencies": {
+    "lodash": "^3.7.0",
+    "react-native": "^0.4.0"
+  },
+  "devDependencies": {
+    "anybar-webpack": "^1.0.7",
+    "babel-core": "^5.1.8",
+    "babel-loader": "^5.0.0",
+    "babel-runtime": "^5.1.8",
+    "standard": "^3.7.1",
+    "supports-color": "^1.3.1",
+    "webpack": "^1.8.4"
+  },
+  "private": true,
+  "scripts": {
+    "start": "node_modules/react-native/packager/packager.sh",
+    "test": "standard",
+    "webpack": "node webpack-watch"
+  },
+  "standard": {
+    "ignore": [
+      "index.ios.js"
+    ]
+  }
+}
