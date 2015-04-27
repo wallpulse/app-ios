@@ -1,6 +1,6 @@
 var React = require('react-native')
 
-var REQUEST_URL = 'https://rawgit.com/boennemann/94b0bdb3ffd493dcc6ba/raw/19bd933ce34bc71fb2a0b17547036fa969b8aa5a/timeline.json'
+var REQUEST_URL = 'http://dev.wallpul.se/tweets?s=jsunconf'
 
 var {
   StyleSheet,

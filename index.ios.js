@@ -1,30 +1,46 @@
 var React = require('react-native')
-
-var REQUEST_URL = 'https://rawgit.com/boennemann/94b0bdb3ffd493dcc6ba/raw/19bd933ce34bc71fb2a0b17547036fa969b8aa5a/timeline.json'
+var Router = require('react-native-router')
 
 var {
   AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  ListView,
-  NavigatorIOS
+  Text
 } = React
 
 var Timeline = require('./components/timeline')
 
-var wallpulse = React.createClass({
+var SettingsIcon = React.createClass({
+  switchToSettings () {
+    this.props.toRoute({
+      name: 'Settings',
+      component: SettingsIcon
+    })
+  },
+
   render () {
-    return (
-      <NavigatorIOS
-        style={styles.container}
-        barTintColor={'gold'}
-        initialRoute={{
-          title: 'wallpul.se',
-          component: Timeline
-        }}
-      />
-    )
+    return (<Text onPress={this.switchToSettings}>
+      Settings
+    </Text>)
+  }
+})
+
+var wallpulse = React.createClass({
+  render() {
+    return (<Router
+      firstRoute={{
+        name: 'wallpul.se',
+        component: Timeline,
+        rightCorner: SettingsIcon
+      }}
+      style={styles.container}
+      headerStyle={{
+        backgroundColor: 'violet'
+      }}
+      titleStyle={{
+        fontFamily: 'Avenir',
+        fontWeight: 900
+      }}
+    />)
   }
 })
 

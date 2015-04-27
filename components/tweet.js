@@ -36,7 +36,9 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   view: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'stretch',
+    paddingBottom: 5,
+    paddingTop: 5
   },
   text: {
     fontFamily: 'Avenir'
@@ -45,12 +47,16 @@ var styles = StyleSheet.create({
     margin: 20,
     width: 60,
     height: 60,
+    borderColor: 'violet',
     borderRadius: 30,
     borderWidth: 1 / PixelRatio.get()
   },
   textContainer: {
     flex: 1,
     justifyContent: 'center',
+    borderWidth: 1 / PixelRatio.get(),
+    borderColor: 'transparent',
+    borderBottomColor: 'violet'
   },
   username: {
     fontWeight: '900'
