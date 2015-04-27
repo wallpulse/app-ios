@@ -7,61 +7,23 @@ var {
   StyleSheet,
   Text,
   View,
-  ListView
+  ListView,
+  NavigatorIOS
 } = React
 
-var Tweet = require('./components/tweet')
+var Timeline = require('./components/timeline')
 
 var wallpulse = React.createClass({
-  getInitialState () {
-    return {
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1.id !== row2.id
-      }),
-      loaded: false
-    }
-  },
-
-  componentDidMount () {
-    this.fetchData()
-  },
-
-  fetchData () {
-    fetch(REQUEST_URL)
-
-    .then((res) => res.json())
-    .then((data) => {
-      this.setState({
-        dataSource: this.state.dataSource.cloneWithRows(data),
-        loaded: true
-      })
-    })
-    .done()
-  },
-
-  renderLoadingView () {
-    return <Text style={styles.loading}>Loading...</Text>
-  },
-
-  renderTweet (tweet) {
-    return <Tweet data={tweet} />
-  },
-
-  renderTweets () {
-    return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this.renderTweet}
-        style={styles.list}
-      />
-    )
-  },
-
   render () {
-    if (this.state.loaded) return this.renderTweets()
-
     return (
-      <View>{this.renderLoadingView()}</View>
+      <NavigatorIOS
+        style={styles.container}
+        barTintColor={'gold'}
+        initialRoute={{
+          title: 'wallpul.se',
+          component: Timeline
+        }}
+      />
     )
   }
 })
@@ -69,17 +31,7 @@ var wallpulse = React.createClass({
 var styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  },
-  list: {
-    paddingTop: 20
-  },
-  loading: {
-    backgroundColor: 'red',
-    color: 'white',
-    fontSize: 30
+    backgroundColor: 'white'
   }
 })
 

@@ -2,6 +2,7 @@ var React = require('react-native')
 
 var {
   StyleSheet,
+  PixelRatio,
   Text,
   View,
   Image
@@ -35,8 +36,7 @@ module.exports = React.createClass({
 var styles = StyleSheet.create({
   view: {
     flexDirection: 'row',
-    alignItems: 'center',
-    backgroundColor: 'darkgray'
+    alignItems: 'center'
   },
   text: {
     fontFamily: 'Avenir'
@@ -46,7 +46,7 @@ var styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 30,
-    borderWidth: 1
+    borderWidth: 1 / PixelRatio.get()
   },
   textContainer: {
     flex: 1,
