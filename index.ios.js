@@ -1,6 +1,5 @@
 var React = require('react-native')
 
-var TWEET = require('./tweet')
 var REQUEST_URL = 'https://rawgit.com/boennemann/94b0bdb3ffd493dcc6ba/raw/19bd933ce34bc71fb2a0b17547036fa969b8aa5a/timeline.json'
 
 var {
