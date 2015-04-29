@@ -38,7 +38,7 @@ var wallpulse = React.createClass({
       }}
       titleStyle={{
         fontFamily: 'Avenir',
-        fontWeight: 900
+        fontWeight: '900'
       }}
     />)
   }
