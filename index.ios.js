@@ -4,10 +4,13 @@ var Router = require('react-native-router')
 var {
   AppRegistry,
   StyleSheet,
-  Text
+  Image,
+  TouchableHighlight
 } = React
 
 var Timeline = require('./components/timeline')
+
+var icon = {uri: 'https://www.dropbox.com/s/l9tu3uum63dxwqk/settings.png?dl=1'}
 
 var SettingsIcon = React.createClass({
   switchToSettings () {
@@ -18,9 +21,13 @@ var SettingsIcon = React.createClass({
   },
 
   render () {
-    return (<Text onPress={this.switchToSettings}>
-      Settings
-    </Text>)
+    return (
+      <TouchableHighlight onPress={this.switchToSettings}>
+        <Image
+          source={icon}
+          style={styles.icon}
+        />
+      </TouchableHighlight>)
   }
 })
 
@@ -48,6 +55,11 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
+  },
+  icon: {
+    marginRight: 20,
+    width: 20,
+    height: 20,
   }
 })
 
