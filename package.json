@@ -11,6 +11,9 @@
   },
   "private": true,
   "scripts": {
+    "build": "curl 'http://localhost:8081/index.ios.bundle?dev=false&minify=true' -o iOS/main.jsbundle",
+    "dev": "node_modules/react-native/packager/packager.sh",
+    "start": "npm run dev",
     "test": "standard"
   }
 }
