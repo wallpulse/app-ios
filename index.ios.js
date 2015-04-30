@@ -21,7 +21,11 @@ var SettingsIcon = React.createClass({
 
   render () {
     return (
-      <TouchableHighlight onPress={this.switchToSettings}>
+      <TouchableHighlight
+        onPress={this.switchToSettings}
+        underlayColor='transparent'
+        activeOpacity={0.5}
+      >
         <Icon
           name='ion|ios-gear-outline'
           size={30}
