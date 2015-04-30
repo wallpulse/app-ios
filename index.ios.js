@@ -9,6 +9,7 @@ var {
 } = React
 
 var Timeline = require('./components/timeline')
+var SettingsScreen = require('./components/settingsscreen')
 
 var icon = {uri: 'https://www.dropbox.com/s/l9tu3uum63dxwqk/settings.png?dl=1'}
 
@@ -16,7 +17,7 @@ var SettingsIcon = React.createClass({
   switchToSettings () {
     this.props.toRoute({
       name: 'Settings',
-      component: SettingsIcon
+      component: SettingsScreen
     })
   },
 
