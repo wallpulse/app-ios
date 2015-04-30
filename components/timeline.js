@@ -1,12 +1,12 @@
 var React = require('react-native')
 
-var REQUEST_URL = 'http://dev.wallpul.se/tweets?s=jsunconf'
-
 var {
   StyleSheet,
   Text,
+  TextInput,
   View,
-  ListView
+  ListView,
+  ActivityIndicatorIOS
 } = React
 
 var Tweet = require('./tweet')
@@ -14,6 +14,7 @@ var Tweet = require('./tweet')
 module.exports = React.createClass({
   getInitialState () {
     return {
+      searchTerm: '#jsunconf',
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1.id !== row2.id
       }),
@@ -22,11 +23,11 @@ module.exports = React.createClass({
   },
 
   componentDidMount () {
-    this.fetchData()
+    this.fetchData(this.state.searchTerm)
   },
 
-  fetchData () {
-    fetch(REQUEST_URL)
+  fetchData (searchTerm) {
+    fetch(getRequestURL(searchTerm))
 
     .then((res) => res.json())
     .then((data) => {
@@ -39,8 +40,12 @@ module.exports = React.createClass({
   },
 
   renderLoadingView () {
-    return (<View>
-      <Text style={styles.loading}>Loading...</Text>
+    return (<View style={{
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}>
+      <ActivityIndicatorIOS size='large' color='darkviolet'/>
     </View>)
   },
 
@@ -48,11 +53,40 @@ module.exports = React.createClass({
     return <Tweet data={tweet} />
   },
 
+  shouldComponentUpdate (nextProps, nextState) {
+    if (this.state.searchTerm !== nextState.searchTerm) {
+      this.fetchData(nextState.searchTerm)
+    }
+    return true
+  },
+
+  renderHeader () {
+    return (<TextInput
+      value={this.state.searchTerm}
+      style={{
+        flex: 1,
+        backgroundColor: 'violet',
+        height: 30,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        color: 'white',
+        fontSize: 30,
+        fontWeight: '900'
+      }}
+      onSubmitEditing={(event) => {
+        this.setState({
+          searchTerm: event.nativeEvent.text
+        })
+      }}
+    />)
+  },
+
   renderTweets () {
     return (
       <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderTweet}
+        renderHeader={this.renderHeader}
         style={styles.list}
       />
     )
@@ -72,9 +106,9 @@ var styles = StyleSheet.create({
   },
   list: {
     flex: 1
-  },
-  loading: {
-    color: 'white',
-    fontSize: 30
   }
 })
+
+function getRequestURL (searchTerm) {
+  return `http://dev.wallpul.se/tweets?s=${encodeURIComponent(searchTerm)}`
+}

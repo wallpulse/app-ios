@@ -41,7 +41,7 @@ var wallpulse = React.createClass({
       }}
       style={styles.container}
       headerStyle={{
-        backgroundColor: 'violet'
+        backgroundColor: 'darkviolet'
       }}
       titleStyle={{
         fontFamily: 'Avenir',
