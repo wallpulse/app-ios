@@ -9,6 +9,8 @@ var {
 } = React
 
 module.exports = React.createClass({
+  displayName: 'Tweet',
+
   propTypes: {
     data: React.PropTypes.object
   },

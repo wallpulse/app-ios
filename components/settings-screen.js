@@ -8,6 +8,7 @@ var {
 } = React
 
 module.exports = React.createClass({
+  displayName: 'Settings',
   render () {
     return (<View style={styles.container}>
       {[0, 1, 2, 3, 4, 5].map((idx) => {

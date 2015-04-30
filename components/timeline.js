@@ -2,7 +2,6 @@ var React = require('react-native')
 
 var {
   StyleSheet,
-  Text,
   TextInput,
   View,
   ListView,
@@ -27,7 +26,7 @@ module.exports = React.createClass({
   },
 
   fetchData (searchTerm) {
-    fetch(getRequestURL(searchTerm))
+    window.fetch(getRequestURL(searchTerm))
 
     .then((res) => res.json())
     .then((data) => {

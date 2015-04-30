@@ -3,41 +3,15 @@ var Router = require('react-native-router')
 
 var {
   AppRegistry,
-  StyleSheet,
-  TouchableHighlight
+  StyleSheet
 } = React
 
 var Timeline = require('./components/timeline')
-var SettingsScreen = require('./components/settingsscreen')
-var Icon = require('FAKIconImage')
-
-var SettingsIcon = React.createClass({
-  switchToSettings () {
-    this.props.toRoute({
-      name: 'Settings',
-      component: SettingsScreen
-    })
-  },
-
-  render () {
-    return (
-      <TouchableHighlight
-        onPress={this.switchToSettings}
-        underlayColor='transparent'
-        activeOpacity={0.5}
-      >
-        <Icon
-          name='ion|ios-gear-outline'
-          size={30}
-          color='white'
-          style={styles.icon}
-        />
-      </TouchableHighlight>)
-  }
-})
+var SettingsIcon = require('./components/settings-icon')
 
 var wallpulse = React.createClass({
-  render() {
+  displayName: 'wallpulse',
+  render () {
     return (<Router
       firstRoute={{
         name: 'wallpul.se',
@@ -60,11 +34,6 @@ var styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white'
-  },
-  icon: {
-    marginRight: 5,
-    width: 44,
-    height: 44
   }
 })
 
