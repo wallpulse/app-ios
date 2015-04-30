@@ -4,14 +4,12 @@ var Router = require('react-native-router')
 var {
   AppRegistry,
   StyleSheet,
-  Image,
   TouchableHighlight
 } = React
 
 var Timeline = require('./components/timeline')
 var SettingsScreen = require('./components/settingsscreen')
-
-var icon = {uri: 'https://www.dropbox.com/s/l9tu3uum63dxwqk/settings.png?dl=1'}
+var Icon = require('FAKIconImage')
 
 var SettingsIcon = React.createClass({
   switchToSettings () {
@@ -24,8 +22,10 @@ var SettingsIcon = React.createClass({
   render () {
     return (
       <TouchableHighlight onPress={this.switchToSettings}>
-        <Image
-          source={icon}
+        <Icon
+          name='ion|ios-gear-outline'
+          size={30}
+          color='white'
           style={styles.icon}
         />
       </TouchableHighlight>)
@@ -58,9 +58,9 @@ var styles = StyleSheet.create({
     backgroundColor: 'white'
   },
   icon: {
-    marginRight: 20,
-    width: 20,
-    height: 20,
+    marginRight: 5,
+    width: 44,
+    height: 44
   }
 })
 
