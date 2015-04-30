@@ -1,13 +1,16 @@
 {
   "name": "wallpulse",
   "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
-  },
   "dependencies": {
     "react-native": "^0.4.1",
     "react-native-icons": "0.0.5",
     "react-native-router": "^0.1.3"
+  },
+  "devDependencies": {
+    "standard": "^3.7.2"
+  },
+  "private": true,
+  "scripts": {
+    "test": "standard"
   }
 }
