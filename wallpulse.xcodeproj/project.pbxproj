@@ -23,6 +23,7 @@
 		34319DD91AF5582000A6BDC0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34319DD61AF5582000A6BDC0 /* Fabric.framework */; };
 		34319DDA1AF5582000A6BDC0 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34319DD71AF5582000A6BDC0 /* TwitterKit.framework */; };
 		34319DDB1AF5582000A6BDC0 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34319DD81AF5582000A6BDC0 /* TwitterKitResources.bundle */; };
+		34319DDE1AF5591200A6BDC0 /* TwitterNativeBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 34319DDD1AF5591200A6BDC0 /* TwitterNativeBridge.m */; };
 		7924B2C51AF234BE00153803 /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7924B2C41AF233F000153803 /* libReactNativeIcons.a */; };
 		7924B2D51AF2357E00153803 /* FAKFontAwesome.h in Resources */ = {isa = PBXBuildFile; fileRef = 7924B2C61AF2357E00153803 /* FAKFontAwesome.h */; };
 		7924B2D61AF2357E00153803 /* FAKFontAwesome.m in Resources */ = {isa = PBXBuildFile; fileRef = 7924B2C71AF2357E00153803 /* FAKFontAwesome.m */; };
@@ -141,6 +142,8 @@
 		34319DD61AF5582000A6BDC0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		34319DD71AF5582000A6BDC0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
 		34319DD81AF5582000A6BDC0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
+		34319DDC1AF5591200A6BDC0 /* TwitterNativeBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterNativeBridge.h; sourceTree = "<group>"; };
+		34319DDD1AF5591200A6BDC0 /* TwitterNativeBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterNativeBridge.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7924B2B51AF233F000153803 /* ReactNativeIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeIcons.xcodeproj; path = "node_modules/react-native-icons/ios/ReactNativeIcons.xcodeproj"; sourceTree = "<group>"; };
 		7924B2C61AF2357E00153803 /* FAKFontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FAKFontAwesome.h; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/FAKFontAwesome.h"; sourceTree = "<group>"; };
@@ -247,6 +250,8 @@
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				34319DDC1AF5591200A6BDC0 /* TwitterNativeBridge.h */,
+				34319DDD1AF5591200A6BDC0 /* TwitterNativeBridge.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -552,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34319DDE1AF5591200A6BDC0 /* TwitterNativeBridge.m in Sources */,
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);

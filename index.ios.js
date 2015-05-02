@@ -1,5 +1,6 @@
 var React = require('react-native')
 var Router = require('react-native-router')
+var tnb = require('NativeModules').TwitterNativeBridge
 
 var {
   AppRegistry,
@@ -38,3 +39,9 @@ var styles = StyleSheet.create({
 })
 
 AppRegistry.registerComponent('wallpulse', () => wallpulse)
+
+
+
+tnb.getToken(() => {
+  console.log(arguments)
+})

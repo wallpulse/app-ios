@@ -11,6 +11,9 @@
 
 #import "RCTRootView.h"
 
+#import <TwitterKit/TwitterKit.h>
+#import <Fabric/Fabric.h>
+
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -44,6 +47,8 @@
   UIViewController *rootViewController = [[UIViewController alloc] init];
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
+  [[Twitter sharedInstance] startWithConsumerKey:@"tMMzk37RbUZqJx3IiXyhpx0mN" consumerSecret:@"uafGULLB8OsiNTolkDwgajQvB8KgffxaEMO1v9yaAYVOIxkzSY"];
+  [Fabric with:@[[Twitter sharedInstance]]];
   [self.window makeKeyAndVisible];
   return YES;
 }
