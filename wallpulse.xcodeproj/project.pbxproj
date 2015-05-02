@@ -20,6 +20,9 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		34319DD91AF5582000A6BDC0 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34319DD61AF5582000A6BDC0 /* Fabric.framework */; };
+		34319DDA1AF5582000A6BDC0 /* TwitterKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34319DD71AF5582000A6BDC0 /* TwitterKit.framework */; };
+		34319DDB1AF5582000A6BDC0 /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 34319DD81AF5582000A6BDC0 /* TwitterKitResources.bundle */; };
 		7924B2C51AF234BE00153803 /* libReactNativeIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7924B2C41AF233F000153803 /* libReactNativeIcons.a */; };
 		7924B2D51AF2357E00153803 /* FAKFontAwesome.h in Resources */ = {isa = PBXBuildFile; fileRef = 7924B2C61AF2357E00153803 /* FAKFontAwesome.h */; };
 		7924B2D61AF2357E00153803 /* FAKFontAwesome.m in Resources */ = {isa = PBXBuildFile; fileRef = 7924B2C71AF2357E00153803 /* FAKFontAwesome.m */; };
@@ -135,6 +138,9 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = iOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = iOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		34319DD61AF5582000A6BDC0 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
+		34319DD71AF5582000A6BDC0 /* TwitterKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TwitterKit.framework; sourceTree = "<group>"; };
+		34319DD81AF5582000A6BDC0 /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7924B2B51AF233F000153803 /* ReactNativeIcons.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeIcons.xcodeproj; path = "node_modules/react-native-icons/ios/ReactNativeIcons.xcodeproj"; sourceTree = "<group>"; };
 		7924B2C61AF2357E00153803 /* FAKFontAwesome.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FAKFontAwesome.h; path = "node_modules/react-native-icons/ios/ReactNativeIcons/Libraries/FontAwesomeKit/FAKFontAwesome.h"; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 				00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
+				34319DDA1AF5582000A6BDC0 /* TwitterKit.framework in Frameworks */,
+				34319DD91AF5582000A6BDC0 /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +281,9 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				34319DD61AF5582000A6BDC0 /* Fabric.framework */,
+				34319DD71AF5582000A6BDC0 /* TwitterKit.framework */,
+				34319DD81AF5582000A6BDC0 /* TwitterKitResources.bundle */,
 				7924B2B51AF233F000153803 /* ReactNativeIcons.xcodeproj */,
 				78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -529,6 +540,7 @@
 				7924B2E21AF2357E00153803 /* ionicons.ttf in Resources */,
 				7924B2E31AF2357E00153803 /* zocial-regular-webfont.ttf in Resources */,
 				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
+				34319DDB1AF5582000A6BDC0 /* TwitterKitResources.bundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +567,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
@@ -575,6 +591,10 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
